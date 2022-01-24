@@ -23,13 +23,13 @@ areas: window management, event handling, colors, textures, and so forth.
 * Imperative programming
 * Graphics
 
-## :computer: Technologies
+### :computer: Technologies
 
 * [C](https://devdocs.io/)
 * [Makefile](https://www.gnu.org/software/make/manual/make.html)
 * [Shell](https://unixguide.readthedocs.io/en/latest/unixcheatsheet/)
 * [gcc](https://terminaldeinformacao.com/2015/10/08/como-instalar-e-configurar-o-gcc-no-windows-mingw/)
 
- ## Autor
+ ### Autor
 
 Made by jessica Fernanda 👋 [See my linkedin](https://www.linkedin.com/in/jessica-fernanda-alves-marques-106651205/)

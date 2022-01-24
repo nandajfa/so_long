@@ -1,24 +1,27 @@
 <h1 align="center">
-	42cursus' printf
+	42cursus' so_long
  </h1>
  
- [![NPM](https://img.shields.io/npm/l/react)](https://github.com/nandajfa/so_ong/blob/main/LICENSE)
+ [![NPM](https://img.shields.io/npm/l/react)](https://github.com/nandajfa/so_long/blob/main/LICENSE)
  
    ## 🗣️ About
 
-> _This project is pretty straight forward. You will recode printf. Hopefully you
-will be able to reuse it in future projects without the fear of being flagged as a cheater.
-You will mainly learn how to use variadic arguments._
+> _This project is a very small 2D game.
+Its purpose is to make you work with textures, sprites,
+and some other very basic gameplay elements._
 
 #### 
 
-The versatility of the printf function in C represents a great exercise in programming for
-us. This project is of moderate difficulty. It will enable you to discover variadic functions
-in C.
-The key to a successful ft_printf is a well-structured and good extensible code.
+The goals of this project are similar to every other goal for this first year: being rigorous,
+level up in C programming, use basic algorithms, do some information research, and so
+forth. <br/>
+So long is a graphic design project. It will help you improve your skills in the following
+areas: window management, event handling, colors, textures, and so forth.
 
-### Prototype
+### Skills
 
+* Imperative programming
+* Graphics
 
 ## :computer: Technologies
 
@@ -29,6 +32,4 @@ The key to a successful ft_printf is a well-structured and good extensible code.
 
  ## Autor
 
-Jessica Fernanda Alves Marques
-
-https://www.linkedin.com/in/jessica-fernanda-alves-marques-106651205/
+Made by jessica Fernanda 👋 [See my linkedin](https://www.linkedin.com/in/jessica-fernanda-alves-marques-106651205/)

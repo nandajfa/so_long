@@ -6,13 +6,13 @@
 #    By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/07 21:12:11 by jefernan          #+#    #+#              #
-#    Updated: 2022/02/07 22:27:12 by jefernan         ###   ########.fr        #
+#    Updated: 2022/02/12 23:11:15 by jefernan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	so_long
 CC		=	clang
-RM		=	rm -f
+RM		=	rm -rf
 
 CFLAGS	=	-Wall -Wextra -Werror
 MLXFLAGS = -Imlx -lX11 -lXext
@@ -23,7 +23,7 @@ MINILIBX = ${MINILIBX_PATH}/libmlx_Linux.a
 LIBFT_PATH = ./libs/libft
 LIBFT = ${LIBFT_PATH}/libft.a
 
-SRCS	=	
+SRCS	=	so_long.c open_file_map.c
 
 SRCS_DIR = srcs
 OBJ_DIR = objs

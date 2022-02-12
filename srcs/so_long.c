@@ -6,11 +6,11 @@
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 18:17:29 by jefernan          #+#    #+#             */
-/*   Updated: 2022/02/11 18:17:55 by jefernan         ###   ########.fr       */
+/*   Updated: 2022/02/12 15:31:43 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	main(int argc, char *argv[])
 {
-	
+	int i;
 }

@@ -6,7 +6,7 @@
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 00:37:46 by jefernan          #+#    #+#             */
-/*   Updated: 2022/02/12 23:20:55 by jefernan         ###   ########.fr       */
+/*   Updated: 2022/02/17 02:16:04 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,10 @@ typedef struct s_game
 	void	*img_collect;
 	void	*img_exit;
 	void	*img_player;
-	char	*map;
+	char	**map;
+	int		fd;
 	int		width;
 	int		height;
-	int		col;
-	int		row;
 	int		win_width;
 	int		win_height;
 	int		player_move;
@@ -68,8 +67,21 @@ typedef struct s_game
 	int		y;	
 }			t_game;
 
-int	check_arg(int argc, char *argv[]);
-char	*open_file_map(char *map);
+typedef struct s_maps
+{
+	int	count_p;
+	int	count_c;
+	int	count_e;
+	int	row;
+	int	col;
+}	t_maps;
 
+
+int		check_arg(int argc, char *argv[]);
+char	**open_file_map(char *map, int fd);
+int	check_map(char	**map, t_maps	*maps);
+void	init_map(t_maps *maps);
+int	check_sprite(char	**map, t_maps *maps);
+int	check_char(char	**map);
 
 #endif

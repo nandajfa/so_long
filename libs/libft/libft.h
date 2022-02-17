@@ -6,7 +6,7 @@
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 11:25:33 by jefernan          #+#    #+#             */
-/*   Updated: 2021/12/06 09:44:40 by jefernan         ###   ########.fr       */
+/*   Updated: 2022/02/14 17:41:08 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 500
+# endif
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
@@ -51,5 +55,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 char	*ft_uitoa(unsigned int n);
+char	*ft_get_next_line(int fd);
 
 #endif

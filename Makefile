@@ -6,7 +6,7 @@
 #    By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/07 21:12:11 by jefernan          #+#    #+#              #
-#    Updated: 2022/02/16 15:05:31 by jefernan         ###   ########.fr        #
+#    Updated: 2022/03/02 00:00:27 by jefernan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC		=	clang
 RM		=	rm -rf
 MKDIR = mkdir -p
 
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror -g3
 MLXFLAGS = -Imlx -lX11 -lXext
 
 MINILIBX_PATH = ./libs/mlx
@@ -26,7 +26,9 @@ LIBFT = ${LIBFT_PATH}/libft.a
 
 HEADER	=	$(SRCS_DIR)/so_long.h
 
-SRCS	=	so_long.c open_file_map.c check_map.c
+SRCS	=	so_long.c open_file_map.c check_map.c close_game.c start_game.c \
+			put_image.c key_hook.c start.c ft_print_d_i.c ft_print_hex.c \
+			ft_print_ptr.c ft_print_str.c ft_print_unsigned.c ft_printf.c
 
 SRCS_DIR = srcs
 OBJ_DIR	 =	obj
@@ -40,8 +42,8 @@ $(OBJ_DIR)/%.o:		$(SRCS_DIR)/%.c $(HEADER)
 
 all:		${NAME}
 
-${NAME}:	${OBJ_DIR} ${LIBFT} $(MINILIBX) $(HEADER) ${OBJECTS}
-				${CC} ${CFLAGS} -g ${OBJECTS} ${LIBFT} ${MINILIBX} \
+${NAME}:	${OBJ_DIR} ${LIBFT} $(HEADER) ${OBJECTS} ${MINILIBX}
+				${CC} ${CFLAGS} ${SOURCES} ${MINILIBX} ${LIBFT} \
 				${MLXFLAGS} -o ${NAME}
 
 
@@ -49,11 +51,10 @@ ${LIBFT}:
 				make -C ${LIBFT_PATH}
 
 $(MINILIBX):
-				make -C ${MINILIBX_PATH}
-				
+				make -C ${MINILIBX_PATH}			
 
 $(OBJ_DIR):
-					mkdir -p $(OBJ_DIR)
+				mkdir -p $(OBJ_DIR)
 
 clean:
 			make clean -C ${LIBFT_PATH}

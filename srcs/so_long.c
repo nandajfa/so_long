@@ -6,25 +6,24 @@
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 18:17:29 by jefernan          #+#    #+#             */
-/*   Updated: 2022/02/17 02:24:31 by jefernan         ###   ########.fr       */
+/*   Updated: 2022/03/01 22:39:40 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include <stdio.h>
 
 int	main(int argc, char *argv[])
 {
 	t_game	game;
 	t_maps	maps;
+	char	*str;
 
 	check_arg(argc, argv);
-	game.map = open_file_map(argv[1], game.fd);
-	printf("%s\n", *game.map);
-	check_map(game.map, &maps);
-
-	
-	free(game.map);
+	str = open_file_map(argv[1], game.fd, &game);
+	start(&game, &maps, game.map);
+	check_map(game.map, &maps, &game);
+	start_game(&game);
+	return (0);
 }
 
 int	check_arg(int argc, char *argv[])

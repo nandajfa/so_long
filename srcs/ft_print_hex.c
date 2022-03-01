@@ -1,48 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_uitoa.c                                         :+:      :+:    :+:   */
+/*   ft_print_hex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/06 09:42:41 by jefernan          #+#    #+#             */
-/*   Updated: 2022/03/01 23:35:32 by jefernan         ###   ########.fr       */
+/*   Created: 2021/12/06 09:40:31 by jefernan          #+#    #+#             */
+/*   Updated: 2022/03/01 21:48:10 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "so_long.h"
 
-static int	ft_count(unsigned int n)
+static int	ft_count(unsigned long int n)
 {
 	int	i;
 
 	i = 0;
-	if (n == 0)
-		i = 1;
 	while (n != 0)
 	{
-		n /= 10;
+		n /= 16;
 		i++;
 	}
 	return (i);
 }
 
-char	*ft_uitoa(unsigned int n)
+int	ft_print_hex(unsigned long int n, char *hexa)
 {
-	int		count;
-	char	*str;
+	unsigned long int	num;
+	int					count;
+	char				*str;
 
-	count = ft_count(n);
-	str = (char *)ft_calloc((count + 1), sizeof(char));
-	if (str == NULL)
-		return (NULL);
 	if (n == 0)
-		str[0] = '0';
-	count--;
-	while (n != 0 && count >= 0)
+		return (write(1, "0", 1));
+	count = ft_count(n);
+	num = n;
+	str = (char *)ft_calloc((count + 1), sizeof(char));
+	if (!str)
+		return (0);
+	while (num)
 	{
-		str[count--] = n % 10 + '0';
-		n /= 10;
+		str[--count] = hexa[num % 16];
+		num /= 16;
 	}
-	return (str);
+	write(1, str, ft_strlen(str));
+	free (str);
+	return (ft_count(n));
 }

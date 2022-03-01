@@ -1,39 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   open_file_map.c                                    :+:      :+:    :+:   */
+/*   ft_print_ptr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/11 18:17:29 by jefernan          #+#    #+#             */
-/*   Updated: 2022/02/17 23:57:53 by jefernan         ###   ########.fr       */
+/*   Created: 2021/12/06 09:40:31 by jefernan          #+#    #+#             */
+/*   Updated: 2022/03/01 21:48:13 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-char	*open_file_map(char *map, int fd, t_game *game)
+int	ft_print_ptr(unsigned long int ptr)
 {
-	int		ret;
-	char	*str;
-	char	*temp;
-	char	buffer[2];
+	unsigned int	len;
 
-	str = ft_strdup("");
-	fd = open(map, O_RDONLY);
-	if (fd == -1)
-		return (NULL);
-	ret = read(fd, buffer, 1);
-	while (ret)
-	{
-		buffer[ret] = '\0';
-		temp = ft_strjoin(str, buffer);
-		free(str);
-		str = temp;
-		ret = read(fd, buffer, 1);
-	}
-	game->map = ft_split(str, '\n');
-	free(str);
-	close (fd);
-	return (temp);
+	if (ptr == 0)
+		return (write(1, "0x0", 3));
+	len = write(1, "0x", 2);
+	len += ft_print_hex(ptr, "0123456789abcdef");
+	return (len);
 }

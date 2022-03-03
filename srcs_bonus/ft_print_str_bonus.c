@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_ptr.c                                     :+:      :+:    :+:   */
+/*   ft_print_str_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/06 09:40:31 by jefernan          #+#    #+#             */
-/*   Updated: 2022/03/01 21:48:13 by jefernan         ###   ########.fr       */
+/*   Created: 2021/12/03 18:57:18 by jefernan          #+#    #+#             */
+/*   Updated: 2022/03/02 00:51:24 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
-int	ft_print_ptr(unsigned long int ptr)
+int	ft_print_str(char *str)
 {
-	unsigned int	len;
+	int	i;
 
-	if (ptr == 0)
-		return (write(1, "0x0", 3));
-	len = write(1, "0x", 2);
-	len += ft_print_hex(ptr, "0123456789abcdef");
-	return (len);
+	i = 0;
+	if (str == NULL)
+		return (write (1, "(null)", 6));
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+	return (i);
 }

@@ -18,10 +18,41 @@ forth. <br/>
 So long is a graphic design project. It will help you improve your skills in the following
 areas: window management, event handling, colors, textures, and so forth.
 
+### Badge
+<img src="./img/so_long.jpg"/>
+
 ### Skills
 
 * Imperative programming
 * Graphics
+
+
+## Getting started
+**Follow the steps below**
+```bash
+# Clone the project and access the folder
+git clone https://github.com/nandajfa/so_long.git && cd so_long/
+
+# Run make so you can build the game
+make
+
+# Run make with bonus if you want to build game with enemies
+make bonus
+
+# Run the game with the map as an argument
+./so_long_bonus "assets/maps/map_bonus.ber"
+
+# Clean output objects with
+make fclean
+
+# Well done!
+```
+
+**Game Controller Keys**
+
+**Move:** W, A, S, D or Arrow keys
+**Exit:** Q or ESC
+
 
 ### :computer: Technologies
 

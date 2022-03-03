@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   so_long_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 00:37:46 by jefernan          #+#    #+#             */
-/*   Updated: 2022/03/02 17:29:19 by jefernan         ###   ########.fr       */
+/*   Updated: 2022/03/02 23:25:33 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef SO_LONG_BONUS_H
+# define SO_LONG_BONUS_H
 
 # include <fcntl.h>
 # include <stdlib.h>
@@ -25,6 +25,7 @@
 # define IMG_COLLECT "assets/images/collect.xpm"
 # define IMG_EXIT "assets/images/exit.xpm"
 # define IMG_PLAYER "assets/images/player.xpm"
+# define IMG_ENEMIE "assets/images/enemie.xpm"
 
 # define KEY_W 119
 # define KEY_A 97
@@ -40,6 +41,7 @@
 # define KEY_Q 113
 # define KEY_PRESS 2
 # define DESTROY_NOTIFY 17
+# define X_EVENT_FOCUS_IN 9
 
 # define IMG_SIZE 32
 
@@ -52,6 +54,7 @@ typedef struct s_game
 	void	*img_collect;
 	void	*img_exit;
 	void	*img_player;
+	void	*img_enemie;
 	char	**map;
 	int		fd;
 	int		win_width;
@@ -88,13 +91,22 @@ int			put_image(t_game *game);
 void		load_map(t_game *game, int x, int y);
 void		free_images(t_game *game);
 int			key_hook(int key, t_game *game);
-void		move_up(t_game *game);
+void		move_up( t_game *game);
 void		move_down(t_game *game);
 void		move_left(t_game *game);
 void		move_right(t_game *game);
 int			put_image_update(t_game *game);
 void		load_map_update(t_game *game, int x, int y);
 void		message(char **map, t_maps *maps, t_game *game);
+void		put_steps(t_game *game);
+void		collect_up(t_game *game);
+void		collect_down(t_game *game);
+void		collect_right(t_game *game);
+void		collect_left(t_game *game);
+int			put_enemy(t_game *game);
+void		enemy_place(t_game *game, int i, int j);
+int			animation(t_game *game)	;
+void 		enemy_animation(t_game *game, int i, int j);
 // FT_PRINTF //
 int			ft_print_d_i(int nbr);
 int			ft_print_str(char *str);

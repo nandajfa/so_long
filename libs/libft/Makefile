@@ -6,7 +6,7 @@
 #    By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/31 10:43:14 by jefernan          #+#    #+#              #
-#    Updated: 2022/03/01 21:49:02 by jefernan         ###   ########.fr        #
+#    Updated: 2022/03/03 22:49:57 by jefernan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRCS	= 	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 			ft_strncmp.c ft_tolower.c ft_toupper.c ft_itoa.c ft_putchar_fd.c \
 			ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_split.c \
 			ft_striteri.c ft_strjoin.c ft_strmapi.c ft_strtrim.c ft_substr.c \
-			ft_uitoa.c ft_get_next_line.c
+			ft_uitoa.c ft_print_d_i.c ft_print_str.c ft_printf.c
 
 OBJS	= ${SRCS:.c=.o}
 RM		=	rm -f

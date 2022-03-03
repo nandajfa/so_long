@@ -6,7 +6,7 @@
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 00:37:46 by jefernan          #+#    #+#             */
-/*   Updated: 2022/03/02 23:25:33 by jefernan         ###   ########.fr       */
+/*   Updated: 2022/03/03 23:03:40 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 # define SO_LONG_BONUS_H
 
 # include <fcntl.h>
-# include <stdlib.h>
 # include <unistd.h>
-# include <stdarg.h>
 # include "../libs/libft/libft.h"
 # include "../libs/mlx/mlx.h"
 
@@ -103,13 +101,5 @@ void		collect_up(t_game *game);
 void		collect_down(t_game *game);
 void		collect_right(t_game *game);
 void		collect_left(t_game *game);
-int			put_enemy(t_game *game);
-void		enemy_place(t_game *game, int i, int j);
-int			animation(t_game *game)	;
-void 		enemy_animation(t_game *game, int i, int j);
-// FT_PRINTF //
-int			ft_print_d_i(int nbr);
-int			ft_print_str(char *str);
-int			ft_printf(const char *format, ...);
 
 #endif

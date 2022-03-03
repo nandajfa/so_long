@@ -6,7 +6,7 @@
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 13:21:27 by jefernan          #+#    #+#             */
-/*   Updated: 2022/03/03 00:40:01 by jefernan         ###   ########.fr       */
+/*   Updated: 2022/03/03 23:02:21 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,9 @@ void	start_game(t_game *game)
 	game->win_ptr = mlx_new_window(game->mlx_ptr, game->win_width, \
 		game->win_height, "So_long");
 	start_image(game);
-	put_image(game);
-	put_enemy(game);
 	mlx_hook(game->win_ptr, KEY_PRESS, 1L << 0, key_hook, game);
 	mlx_hook(game->win_ptr, DESTROY_NOTIFY, 0, ft_close, game);
 	mlx_loop_hook(game->mlx_ptr, put_image, game);
-//	mlx_loop_hook(game->mlx_ptr, animation, game);
 	mlx_loop(game->mlx_ptr);
 }
 

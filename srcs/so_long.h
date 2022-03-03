@@ -6,7 +6,7 @@
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 00:37:46 by jefernan          #+#    #+#             */
-/*   Updated: 2022/03/02 17:29:19 by jefernan         ###   ########.fr       */
+/*   Updated: 2022/03/03 23:41:33 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 # define SO_LONG_H
 
 # include <fcntl.h>
-# include <stdlib.h>
 # include <unistd.h>
-# include <stdarg.h>
 # include "../libs/libft/libft.h"
 # include "../libs/mlx/mlx.h"
 
@@ -92,12 +90,12 @@ void		move_up(t_game *game);
 void		move_down(t_game *game);
 void		move_left(t_game *game);
 void		move_right(t_game *game);
+void		collect_down(t_game *game);
+void		collect_up(t_game *game);
+void		collect_left(t_game *game);
+void		collect_right(t_game *game);
 int			put_image_update(t_game *game);
 void		load_map_update(t_game *game, int x, int y);
 void		message(char **map, t_maps *maps, t_game *game);
-// FT_PRINTF //
-int			ft_print_d_i(int nbr);
-int			ft_print_str(char *str);
-int			ft_printf(const char *format, ...);
 
 #endif

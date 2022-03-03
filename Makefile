@@ -6,7 +6,7 @@
 #    By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/07 21:12:11 by jefernan          #+#    #+#              #
-#    Updated: 2022/03/02 23:21:48 by jefernan         ###   ########.fr        #
+#    Updated: 2022/03/03 23:40:40 by jefernan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,15 +29,14 @@ HEADER		 = $(SRCS_DIR)/so_long.h
 HEADER_BONUS = ${BONUS_DIR}/so_long_bonus.h
 
 SRCS		=	so_long.c open_file_map.c check_map.c close_game.c \
-				start_game.c put_image.c key_hook.c start.c ft_print_d_i.c \
-				ft_print_str.c ft_printf.c \
-
+				start_game.c put_image.c key_hook.c start.c move_down.c \
+				move_up.c move_left.c move_right.c
+				 
 SRCS_BONUS	= 	so_long_bonus.c open_file_map_bonus.c check_map_bonus.c \
 				close_game_bonus.c start_game_bonus.c put_image_bonus.c \
-				key_hook_bonus.c start_bonus.c ft_print_d_i_bonus.c \
-				ft_printf_bonus.c ft_print_str_bonus.c put_steps_bonus.c \
+				key_hook_bonus.c start_bonus.c put_steps_bonus.c \
 				move_up_bonus.c move_left_bonus.c move_right_bonus.c \
-				move_down_bonus.c put_enemy_bonus.c animation_bonus.c
+				move_down_bonus.c
 
 SRCS_DIR  = srcs
 BONUS_DIR = srcs_bonus
@@ -61,12 +60,11 @@ all:		${NAME}
 
 bonus:		${NAME_BONUS}
 
-${NAME}:	${OBJ_DIR} ${LIBFT} $(HEADER) ${OBJECTS} ${MINILIBX}
+${NAME}:	${OBJ_DIR} ${LIBFT} ${OBJECTS} ${MINILIBX}
 				${CC} ${CFLAGS} ${SOURCES} ${MINILIBX} ${LIBFT} \
 				${MLXFLAGS} -o ${NAME}
 
-${NAME_BONUS}:	${OBJ_DIR} ${LIBFT} $(HEADER_BONUS) ${OBJECTS_BONUS} \
-				${MINILIBX}
+${NAME_BONUS}:	${OBJ_DIR} ${LIBFT} ${OBJECTS_BONUS} ${MINILIBX}			
 					${CC} ${CFLAGS} ${SOURCES_BONUS} ${MINILIBX} ${LIBFT} \
 					${MLXFLAGS} -o ${NAME_BONUS}
 
@@ -90,4 +88,7 @@ fclean:		clean
 			
 re:			fclean all
 
-.PHONY: 	all clean fclean re libft minilibx
+val:		all
+			valgrind --leak-check=full ./so_long ./assets/maps/map3.ber
+
+.PHONY: 	all clean fclean re val

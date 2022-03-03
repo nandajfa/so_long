@@ -6,7 +6,7 @@
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 20:28:26 by jefernan          #+#    #+#             */
-/*   Updated: 2022/03/01 23:32:28 by jefernan         ###   ########.fr       */
+/*   Updated: 2022/03/03 16:02:10 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	message(char	**map, t_maps *maps, t_game *game)
 {
 	if (maps->count_p != 1 || maps->count_e != 1 || maps->count_c == 0)
 	{
-		write (1, "Error\nInvalid map: P-E-C\n", 26);
+		ft_printf("Error\nInvalid map: P-E-C\n");
 		free_map(map);
 		free(game->map);
 		exit (1);
@@ -95,7 +95,7 @@ int	check_char(char	**map, t_game *game)
 			if (map[i][j] != '0' && map[i][j] != '1' && map[i][j] != 'P'
 				&& map[i][j] != 'E' && map[i][j] != 'C')
 			{
-				write (1, "Error\nInvalid map: unknown character\n", 39);
+				ft_printf("Error\nInvalid map: unknown character\n");
 				free_map(map);
 				free(game->map);
 				exit (1);

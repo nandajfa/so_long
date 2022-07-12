@@ -60,6 +60,6 @@ make fclean
 * [Makefile](https://www.gnu.org/software/make/manual/make.html)
 * [Minilibx](https://github.com/42Paris/minilibx-linux)
 
- ### Autor
+ ### Author
 
 Made by jessica Fernanda 👋 [See my linkedin](https://www.linkedin.com/in/jessica-fernanda-alves-marques-106651205/)

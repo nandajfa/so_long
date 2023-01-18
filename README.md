@@ -18,7 +18,7 @@ forth. <br/>
 So long is a graphic design project. It will help you improve your skills in the following
 areas: window management, event handling, colors, textures, and so forth.
 
-### Badge
+### Game
 <img src="./img/so_long.jpg"/>
 
 ### Skills

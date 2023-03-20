@@ -1,8 +1,12 @@
 <h1 align="center">
-	42cursus' so_long
+	<img alt="badge solong" src="./so_long_dark.svg" />
  </h1>
  
+  <div align="center">
+  
  [![NPM](https://img.shields.io/npm/l/react)](https://github.com/nandajfa/so_long/blob/main/LICENSE)
+ 
+  </div>
  
    ## 🗣️ About
 
